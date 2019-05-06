@@ -1,0 +1,16 @@
+{
+  "name": "tpo-lp4",
+  "version": "1.0.0",
+  "description": "Vsaka skupina, ki je sestavljena iz 4 članov, mora razviti lastni projekt (LP) na izbrani problemski domeni, in sicer od **predloga projekta** do **implementacije**, kjer je podrobna razdelitev naslednja:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
