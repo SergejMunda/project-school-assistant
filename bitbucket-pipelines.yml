@@ -2,7 +2,7 @@
 # Docker Hub <https://hub.docker.com/>
 image: node:6.9.4
 
-# Za posredovanje produkcijske razliÄice aplikacije na Heroku
+# Za posredovanje produkcijske razlièice aplikacije na Heroku
 # moramo izvesti celostno kloniranje
 clone:
   depth:
@@ -12,7 +12,7 @@ pipelines:
   branches:
     # Ko posredujemo uveljavitev na vejo razvoja `master` se
     # izvede neprekinjena integracija (CI), ki izvede vse teste
-    master:
+    production:
       - step:
           caches:
             - node
@@ -20,7 +20,7 @@ pipelines:
             - npm install
             - npm test
   custom:
-    # RoÄna zahteva za izvedbo postavitve, ki izvede vse teste
+    # Roèna zahteva za izvedbo postavitve, ki izvede vse teste
     # in posreduje aplikacijo na Heroku
     rocna-postavitev:
       - step:
