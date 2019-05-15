@@ -23,6 +23,7 @@ pipelines:
             - docker login --username=_ --password=$API_KEY registry.heroku.com
             - heroku container:push web -a $APP_NAME
             - heroku container:release web -a $APP_NAME
+            
   custom:
     # Roèna zahteva za izvedbo postavitve, ki izvede vse teste
     # in posreduje aplikacijo na Heroku
