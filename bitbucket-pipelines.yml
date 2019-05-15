@@ -19,6 +19,7 @@ pipelines:
           script:
             - npm install
             - npm test
+            - git push https://heroku:$API_KEY@git.heroku.com/$APP_NAME.git HEAD
   custom:
     # Roèna zahteva za izvedbo postavitve, ki izvede vse teste
     # in posreduje aplikacijo na Heroku
