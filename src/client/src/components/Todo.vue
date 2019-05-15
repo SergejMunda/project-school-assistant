@@ -19,13 +19,8 @@
 <script>
 export default {
   data: () => ({
-    todo: [{ name: "test", vsebina: "testetste" }]
-  }),
-  methods: () => {
-    goToTodoFormPage: () => {
-      this.$router.push("Home");
-    };
-  }
+    todo: [{ name: "test", vsebina: "TODO" }]
+  })
 };
 </script>
 
