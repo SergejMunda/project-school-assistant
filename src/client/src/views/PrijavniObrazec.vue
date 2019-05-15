@@ -14,6 +14,13 @@
         label="E-mail"
         required
       ></v-text-field>
+
+       <v-text-field
+        v-model="password"
+        :rules="passwordRules"
+        label="Password"
+        required
+      ></v-text-field>
   
       <v-btn
         :disabled="!valid"
@@ -33,6 +40,11 @@
         nameRules: [
             v => !!v || 'Name is required',
             v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        ],
+        password: '',
+        passwordRules: [
+            v => !!v || 'password is required',
+            v => (v && v.length <= 10) || 'password must be less than 10 characters'
         ],
         email: '',
         emailRules: [
