@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "tpo"
+  },
+  "AccessToken": {
+    "dataSource": "tpo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "tpo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "tpo",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "tpo",
+    "public": false
+  },
+  "Uporabnik": {
+    "dataSource": "tpo",
+    "public": true
+  },
+  "Urnik": {
+    "dataSource": "tpo",
+    "public": true
+  },
+  "Koledar": {
+    "dataSource": "tpo",
+    "public": true
+  },
+  "avtobus": {
+    "dataSource": "db",
+    "public": true
+  },
+  "dogodek": {
+    "dataSource": "db",
+    "public": true
+  },
+  "restavracija": {
+    "dataSource": "db",
+    "public": true
+  }
+}

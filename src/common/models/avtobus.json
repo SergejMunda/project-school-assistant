@@ -1,0 +1,27 @@
+{
+  "name": "avtobus",
+  "plural": "avtobusi",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nazivi_postaj": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "id_postaj": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
