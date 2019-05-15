@@ -34,5 +34,17 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Uporabnik": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Urnik": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Koledar": {
+    "dataSource": "db",
+    "public": true
   }
 }

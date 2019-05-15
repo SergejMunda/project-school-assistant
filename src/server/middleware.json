@@ -13,7 +13,9 @@
     },
     "helmet#xssFilter": {},
     "helmet#frameguard": {
-      "params": { "action": "deny" }
+      "params": {
+        "action": "deny"
+      }
     },
     "helmet#hsts": {
       "params": {
@@ -33,19 +35,23 @@
   "parse": {},
   "routes": {
     "loopback#rest": {
-      "paths": ["${restApiRoot}"]
+      "paths": [
+        "${restApiRoot}"
+      ]
     }
   },
   "files": {
     "loopback#static": [
       {
-        "name": "publicPath",
-        "paths": ["/"],
+        "paths": [
+          "/"
+        ],
         "params": "$!../client/dist"
       },
       {
-        "name": "vueRouter",
-        "paths": ["*"],
+        "paths": [
+          "*"
+        ],
         "params": "$!../client/dist/index.html",
         "optional": true
       }

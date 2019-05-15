@@ -1,0 +1,24 @@
+{
+  "name": "Uporabnik",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "uporabnikov_email": {
+      "type": "string",
+      "required": true
+    },
+    "hashed_geslo": {
+      "type": "string"
+    },
+    "dostopni_zeton": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
