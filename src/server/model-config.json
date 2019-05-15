@@ -46,5 +46,17 @@
   "Koledar": {
     "dataSource": "db",
     "public": true
+  },
+  "avtobus": {
+    "dataSource": "db",
+    "public": true
+  },
+  "dogodek": {
+    "dataSource": "db",
+    "public": true
+  },
+  "restavracija": {
+    "dataSource": "db",
+    "public": true
   }
 }
