@@ -19,7 +19,10 @@ pipelines:
           script:
             - npm install
             - npm test
-            - git push https://heroku:$API_KEY@git.heroku.com/$APP_NAME.git HEAD
+            - git push https://heroku:$API_KEY@git.heroku.com/$APP_NAME.git master --force
+            - docker login --username=_ --password=$API_KEY registry.heroku.com
+            - heroku container:push web -a $APP_NAME
+            - heroku container:release web -a $APP_NAME
   custom:
     # Roèna zahteva za izvedbo postavitve, ki izvede vse teste
     # in posreduje aplikacijo na Heroku
