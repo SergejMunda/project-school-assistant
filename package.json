@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build-client": "cd src/client && vue-cli-service serve",
+    "build-client": "cd src/client && npm i && vue-cli-service build",
     "start": "parallelshell 'npm run build-client' 'node src'"
   },
   "dependencies": {
