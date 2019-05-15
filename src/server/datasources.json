@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "tpo": {
+    "host": "mlab.com",
+    "port": 57256,
+    "url": "mongodb://tpo:tpo1234@ds157256.mlab.com:57256/tpo",
+    "database": "tpo",
+    "password": "tpo1234",
+    "name": "tpo",
+    "user": "tpo",
+    "connector": "mongodb"
   }
 }

@@ -9,11 +9,8 @@
     "lint-server": "eslint .",
     "start-backend": "node .",
     "posttest": "npm run lint",
-    "serve-client": "cd client && vue-cli-service serve",
-    "build-client": "cd client && vue-cli-service build --watch",
-    "lint-client": "cd client && vue-cli-service lint",
     "nodemon-start": "nodemon",
-    "start": "parallelshell 'npm run build-client' 'npm run nodemon-start'"
+    "start": "nodemon"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -25,23 +22,15 @@
     "loopback-connector-mongodb": "^1.18.1",
     "nodemon": "^1.18.11",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.6"
+    "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.6.0",
-    "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-plugin-pwa": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-loopback": "^8.0.0",
-    "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "parallelshell": "^3.0.1",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "sass-loader": "^7.1.0"
   },
   "nodemonConfig": {
     "ignore": [

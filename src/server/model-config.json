@@ -14,37 +14,37 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "tpo"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": false
   },
   "Uporabnik": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": true
   },
   "Urnik": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": true
   },
   "Koledar": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": true
   },
   "avtobus": {
