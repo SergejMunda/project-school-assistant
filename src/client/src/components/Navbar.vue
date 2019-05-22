@@ -27,7 +27,7 @@
         </v-list>
       </v-menu>
 
-      <v-btn flat color="grey">
+      <v-btn @click="signout" flat color="grey">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
@@ -48,10 +48,12 @@
   </nav>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       drawer: false,
+      token : localStorage.getItem('accToken'),
       links: [
         { icon: "dashboard", text: "Home", route: "/home" },
         { icon: "fast-food", text: "Food", route: "/projects" },
@@ -60,7 +62,21 @@ export default {
       ],
       snackbar: false
     };
-  }
+  },
+
+  methods: {
+    signout(){
+      axios.post('http://localhost:3000/api/Users/logout?access_token='+this.token).then(response =>{
+        console.log(response)
+        localStorage.removeItem('accToken')
+        this.$router.push('/')
+      })
+        .catch(error => {
+        console.error(error);
+      });
+      
+    }
+  },
 };
 </script>
 <style>

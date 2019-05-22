@@ -69,11 +69,13 @@ export default {
                     console.log(response)
                     this.token = response.data.id
                     localStorage.setItem('accToken', this.token)
+                    localStorage.setItem('email',this.user.email)
+                    this.$router.push('home')
                 })
                     .catch(error => {
                     console.error(error);
                 });
-                this.$router.push('home')
+                
              }
         }
     },
