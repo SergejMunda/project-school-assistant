@@ -53,7 +53,7 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: "dashboard", text: "Home", route: "/" },
+        { icon: "dashboard", text: "Home", route: "/home" },
         { icon: "fast-food", text: "Food", route: "/projects" },
         { icon: "event-search", text: "Events", route: "/team" },
         { icon: "directions-bus", text: "Bus", route: "/projects" }
