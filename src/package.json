@@ -10,7 +10,8 @@
     "start-backend": "node .",
     "posttest": "npm run lint",
     "nodemon-start": "nodemon",
-    "start": "nodemon"
+    "start": "nodemon",
+    "test": "jest"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -25,12 +26,15 @@
     "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-loopback": "^8.0.0",
+    "jest": "^24.8.0",
     "node-sass": "^4.9.0",
     "parallelshell": "^3.0.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-jest": "^3.0.4"
   },
   "nodemonConfig": {
     "ignore": [
@@ -38,5 +42,15 @@
     ],
     "delay": "2500"
   },
-  "description": "StraightAs"
+  "description": "StraightAs",
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest"
+    }
+  }
 }
