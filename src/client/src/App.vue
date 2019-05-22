@@ -1,21 +1,19 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title>StraightAs</v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
+  <v-app class="grey lighten-4">
+    <Navbar/>
+    <v-content class="mx-4 mb-4">
+      <router-view/>
     </v-content>
-    <v-footer app></v-footer>
   </v-app>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Navbar
+  },
   data() {
     return {
       //
