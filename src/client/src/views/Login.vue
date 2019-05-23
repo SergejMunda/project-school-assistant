@@ -58,7 +58,7 @@ export default {
         posts : [],
         loading: false,
         dialog: false,
-        token: localStorage.getItem('accToken')
+
         }
     },
 
@@ -69,10 +69,10 @@ export default {
                     console.log(response)
                     this.token = response.data.id
                     localStorage.setItem('accToken', this.token)
-                    localStorage.setItem('email',this.user.email)
                     this.$router.push('home')
                 })
                     .catch(error => {
+                    localStorage.removeItem('accToken')
                     console.error(error);
                 });
                 

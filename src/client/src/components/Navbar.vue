@@ -53,7 +53,6 @@ export default {
   data() {
     return {
       drawer: false,
-      token : localStorage.getItem('accToken'),
       links: [
         { icon: "dashboard", text: "Home", route: "/home" },
         { icon: "fast-food", text: "Food", route: "/projects" },
@@ -66,8 +65,11 @@ export default {
 
   methods: {
     signout(){
-      axios.post('http://localhost:3000/api/Users/logout?access_token='+this.token).then(response =>{
+      axios.post('http://localhost:3000/api/Users/logout?access_token='+localStorage.getItem('accToken')).then(response =>{
         console.log(response)
+        for (var key in localStorage) {
+          console.log(key + ':' + localStorage[key]);
+        }
         localStorage.removeItem('accToken')
         this.$router.push('/')
       })
