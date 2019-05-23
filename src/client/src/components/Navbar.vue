@@ -1,5 +1,5 @@
-<template>
-  <nav>
+<template >
+  <nav v-if="$route.path !=='/' && $route.path !=='/register' ">
     <v-snackbar v-model="snackbar" :timeout="4000" color="success">
       <span>Awesome! You added a new project.</span>
       <v-btn flat color="white" @click="snackbar = false">Close</v-btn>
@@ -52,6 +52,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      notRegisterOrLogin : true,
       drawer: false,
       links: [
         { icon: "dashboard", text: "Home", route: "/home" },
@@ -67,9 +68,6 @@ export default {
     signout(){
       axios.post('http://localhost:3000/api/Users/logout?access_token='+localStorage.getItem('accToken')).then(response =>{
         console.log(response)
-        for (var key in localStorage) {
-          console.log(key + ':' + localStorage[key]);
-        }
         localStorage.removeItem('accToken')
         this.$router.push('/')
       })
@@ -78,7 +76,10 @@ export default {
       });
       
     }
+  
+  
   },
+ 
 };
 </script>
 <style>
