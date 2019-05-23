@@ -9,7 +9,7 @@
         <v-form class="px-3" ref="form" v-on:submit.prevent>
           <v-text-field label="Email" v-model="todo.email" prepend-icon="folder"></v-text-field>
           <v-textarea label="opis" v-model="todo.opis" prepend-icon="edit"></v-textarea>
-          <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Add project</v-btn>
+          <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Dodaj todo</v-btn>
         </v-form>
       </v-card-text>
     </v-card>

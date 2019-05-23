@@ -9,7 +9,7 @@
             <v-card>
             <v-card-text class="pt-4">
                 <div>
-                    <v-form v-model="valid" ref="form">
+                    <v-form v-model="valid3" ref="form">
                     <v-text-field
                         label="Enter your e-mail address"
                         v-model="user.email"
@@ -28,8 +28,9 @@
                         required
                     ></v-text-field>
                     <v-layout justify-space-between>
-                        <v-btn @click="login" :class=" { 'blue darken-4 white--text' : valid, disabled: !valid }">Login</v-btn>
-                        <a href="">Forgot Password</a>
+                        <v-btn @click="login" :class=" { 'blue darken-4 white--text' : valid1, disabled: !valid1 }">Login</v-btn>
+                        <v-btn @click="toRegistration" :class=" { 'blue darken-4 white--text' : valid2, disabled: !valid2 }">Register</v-btn>
+                       
                     </v-layout>
                     </v-form>
                 </div>
@@ -45,7 +46,9 @@ import axios from "axios";
 export default {
      data() {
         return {
-        valid: false,
+        valid1: false,
+        valid2: false,
+        valid3:"",
         e1: true,
         user: { email: "", password: "" },
         passwordRules: [
@@ -77,6 +80,10 @@ export default {
                 });
                 
              }
+        },
+
+        toRegistration(){
+            this.$router.push('register')
         }
     },
 
