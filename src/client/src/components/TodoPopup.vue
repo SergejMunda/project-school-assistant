@@ -7,7 +7,6 @@
       </v-card-title>
       <v-card-text>
         <v-form class="px-3" ref="form" v-on:submit.prevent>
-          <v-text-field label="Email" v-model="todo.email" prepend-icon="folder"></v-text-field>
           <v-textarea label="opis" v-model="todo.opis" prepend-icon="edit"></v-textarea>
           <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Dodaj todo</v-btn>
         </v-form>
@@ -24,13 +23,22 @@ export default {
     return {
       todo: { email: "", opis: "" },
       loading: false,
-      dialog: false
+      dialog: false,
+      token: "",
+      email: ""
     };
+  },
+  beforeMount() {
+    this.email = window.localStorage.getItem("email");
+    this.todo.email = this.email;
+    this.token = window.localStorage.getItem("accToken");
   },
   methods: {
     submit() {
       axios
-        .post("http://localhost:3000/api/todos", this.todo)
+        .post("http://localhost:3000/api/todos", this.todo, {
+          headers: { Authorization: this.token }
+        })
         .then(response => {
           this.createResp = response.status;
           this.dialog = false;
