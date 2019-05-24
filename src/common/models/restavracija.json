@@ -7,8 +7,35 @@
     "validateUpsert": true
   },
   "properties": {
-    "restavracije": {
-      "type": "object"
+    "ime": {
+      "type": "string"
+    },
+    "naslov": {
+      "type": "string"
+    },
+    "kraj": {
+      "type": "string"
+    },
+    "ocena": {
+      "type": "number"
+    },
+    "doplacilo": {
+      "type": "number"
+    },
+    "vegetarijansko": {
+      "type": "string"
+    },
+    "dostop_za_invalide": {
+      "type": "string"
+    },
+    "dostava": {
+      "type": "string"
+    },
+    "odprto_ob_vikendih": {
+      "type": "string"
+    },
+    "nov_lokal": {
+      "type": "string"
     }
   },
   "validations": [],
