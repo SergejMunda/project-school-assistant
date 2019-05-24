@@ -1,14 +1,16 @@
 <template>
   <v-dialog max-width="600px" v-model="dialog">
-    <v-btn flat slot="activator" class="success">Dodaj todo</v-btn>
+    <v-btn flat slot="activator" class="success">Dodaj event</v-btn>
     <v-card>
       <v-card-title>
-        <h2>Dodaj todo</h2>
+        <h2>Dodaj event</h2>
       </v-card-title>
       <v-card-text>
         <v-form class="px-3" ref="form" v-on:submit.prevent>
-          <v-textarea label="opis" v-model="todo.opis" prepend-icon="edit"></v-textarea>
-          <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Dodaj todo</v-btn>
+          <v-text-field label="naslov" v-model="event.title" prepend-icon="edit"></v-text-field>
+          <v-text-field label="datum" v-model="event.date" prepend-icon="edit"></v-text-field>
+          <v-textarea label="opis" v-model="event.details" prepend-icon="edit"></v-textarea>
+          <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Dodaj event</v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -21,26 +23,27 @@ import axios from "axios";
 export default {
   data() {
     return {
-      todo: { email: "", opis: "" },
+      event: { email: "", title: "", details: "", date: "" },
       loading: false,
       dialog: false,
-      token: ""
+      token: "",
+      email: ""
     };
   },
   beforeMount() {
-    this.todo.email = window.localStorage.getItem("email");
+    this.email = window.localStorage.getItem("email");
+    this.event.email = this.email;
     this.token = window.localStorage.getItem("accToken");
   },
   methods: {
     submit() {
       axios
-        .post("http://localhost:3000/api/todos", this.todo, {
+        .post("http://localhost:3000/api/koledarji", this.event, {
           headers: { Authorization: this.token }
         })
         .then(response => {
-          this.createResp = response.status;
           this.dialog = false;
-          this.$emit("todoDodan");
+          this.$emit("eventDodan");
         })
         .catch(error => {
           console.error(error);
