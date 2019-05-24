@@ -7,9 +7,17 @@
     "validateUpsert": true
   },
   "properties": {
-    "vnosi_v_koledarju": {
-      "type": "object",
-      "required": true
+    "email": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
     }
   },
   "validations": [],
