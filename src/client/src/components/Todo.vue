@@ -13,6 +13,9 @@
               <v-icon small left>delete</v-icon>
               <span>Izbrisi</span>
             </v-btn>
+             <v-btn icon>
+                <v-icon>edit</v-icon>
+             </v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

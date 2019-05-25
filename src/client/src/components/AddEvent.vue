@@ -8,7 +8,7 @@
       <v-card-text>
         <v-form class="px-3" ref="form" v-on:submit.prevent>
           <v-text-field label="naslov" v-model="event.title" prepend-icon="edit"></v-text-field>
-          <v-text-field label="datum" v-model="event.date" prepend-icon="edit"></v-text-field>
+          <v-text-field label="datum" v-model="event.date" prepend-icon="edit" placeholder="YYYY-MM-DD"></v-text-field>
           <v-textarea label="opis" v-model="event.details" prepend-icon="edit"></v-textarea>
           <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Dodaj event</v-btn>
         </v-form>
