@@ -72,10 +72,12 @@ export default {
                     console.log(response)
                     this.token = response.data.id
                     localStorage.setItem('accToken', this.token)
+                    localStorage.setItem('email',this.user.email)
                     this.$router.push('home')
                 })
                     .catch(error => {
                     localStorage.removeItem('accToken')
+                    localStorage.removeItem('email',this.user.email)
                     console.error(error);
                 });
                 
