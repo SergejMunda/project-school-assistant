@@ -1,23 +1,24 @@
 <template>
   <div>
     <v-flex xs2 sm4 md2>
-    <AddEvent @eventDodan="getEvents"/>
+      <AddEvent @eventDodan="getEvents"/>
     </v-flex>
     <v-layout row wrap>
       <v-flex xs12 sm12 md8 lg6 v-for="event in events" :key="event.id">
         <v-card class="ma-3">
-           <v-card-title primary-title>
+          <v-card-title primary-title>
             <div>
-                <div class="headline">{{ event.title }}</div>
-                <span class="grey--text">{{event.date}}</span>
+              <div class="headline">{{ event.title }}</div>
+              <span class="grey--text">{{event.date}}</span>
             </div>
           </v-card-title>
-          <v-card-text>
-           {{ event.details}}
-          </v-card-text>
-          <v-btn @click="deleteEvent(event.id)" icon>
-                      <v-icon>delete</v-icon>
-           </v-btn>
+          <v-card-text>{{ event.details}}</v-card-text>
+          <v-card-actions>
+            <EditEvent :event="event" @eventEdit="getEvents"/>
+            <v-btn @click="deleteEvent(event.id)" icon>
+              <v-icon>delete</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
@@ -27,17 +28,18 @@
 <script>
 import axios from "axios";
 import AddEvent from "../components/AddEvent.vue";
+import EditEvent from "../components/EditEvent.vue";
 export default {
   components: {
-    AddEvent
+    AddEvent,
+    EditEvent
   },
-  
+
   data() {
     return {
       events: [],
       email: "",
-      token: "",
-      
+      token: ""
     };
   },
   beforeMount() {
@@ -48,10 +50,12 @@ export default {
     this.getEvents();
   },
   methods: {
-     getEvents() {
+    getEvents() {
       axios
         .get(
-          `http://localhost:3000/api/koledarji?filter[where][email]=${this.email}`,
+          `http://localhost:3000/api/koledarji?filter[where][email]=${
+            this.email
+          }`,
           {
             headers: { Authorization: this.token }
           }
@@ -62,7 +66,7 @@ export default {
         })
         .catch(error => console.error(error));
     },
-     deleteEvent(id) {
+    deleteEvent(id) {
       axios
         .delete(`http://localhost:3000/api/koledarji/${id}`, {
           headers: { Authorization: this.token }
@@ -71,7 +75,7 @@ export default {
           this.getEvents();
         })
         .catch(error => console.error(error));
-    },
+    }
   }
 };
 </script>
