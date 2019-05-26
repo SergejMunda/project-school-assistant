@@ -34,15 +34,19 @@
     "public": true
   },
   "avtobus": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": true
   },
   "dogodek": {
-    "dataSource": "db",
+    "dataSource": "tpo",
     "public": true
   },
   "restavracija": {
-    "dataSource": "db",
+    "dataSource": "tpo",
+    "public": true
+  },
+  "todo": {
+    "dataSource": "tpo",
     "public": true
   }
 }
