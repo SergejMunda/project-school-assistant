@@ -3,6 +3,9 @@
     <v-layout row wrap>
       <v-flex xs12 md6>
         <Calendar/>
+        <br>
+        <br>
+        <Urnik/>
       </v-flex>
       <v-flex xs12 md1></v-flex>
       <v-flex xs12 md5>
@@ -15,13 +18,14 @@
 <script>
 import axios from "axios";
 import Todo from "../components/Todo.vue";
+import Urnik from "../components/Urnik.vue";
 import Calendar from "../components/Calendar.vue";
-
 
 export default {
   components: {
     Todo,
     Calendar,
+    Urnik
   },
   data() {
     return {
