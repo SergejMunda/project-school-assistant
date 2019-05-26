@@ -65,7 +65,7 @@ export default {
       drawer: false,
       links: [
         { icon: "dashboard", text: "Home", route: "/home" },
-        { icon: "fast-food", text: "Food", route: "/projects" },
+        { icon: "fast-food", text: "Food", route: "/food" },
         { icon: "event-search", text: "Events", route: "/events" },
         { icon: "directions-bus", text: "Bus", route: "/projects" }
       ],
