@@ -4,6 +4,7 @@ import Dashboard from './views/Dashboard.vue';
 import Login from './views/Login.vue';
 import Registration from './views/Registration.vue';
 import Events from './views/Events.vue';
+import Food from './views/Restaurants.vue';
 import Buses from './views/Buses.vue';
 
 
@@ -31,6 +32,11 @@ export default new Router({
             path: '/events',
             name: 'events',
             component: Events,
+        },
+        {
+            path: '/food',
+            name: 'food',
+            component: Food,
         },
         {
             path: '/buses',

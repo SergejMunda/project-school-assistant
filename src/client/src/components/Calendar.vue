@@ -8,13 +8,11 @@
             <template v-for="event in eventsMap[date]">
               <v-menu :key="event.title" v-model="event.open" full-width offset-x>
                 <template v-slot:activator="{ on }">
-                  <div v-if="!event.time" v-ripple class="my-event" v-on="on" v-html="event.title"></div>
+                  <div v-if="!event.time" class="my-event" v-on="on" v-html="event.title"></div>
                 </template>
                 <v-card color="grey lighten-4" min-width="350px" flat>
                   <v-toolbar color="primary" dark>
-                    <v-btn icon>
-                      <v-icon>edit</v-icon>
-                    </v-btn>
+                    <EditEvent :event="event" @eventEdit="getEvents"/>
                     <v-toolbar-title v-html="event.title"></v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-btn @click="deleteEvent(event.id)" icon>
@@ -40,9 +38,12 @@
 <script>
 import axios from "axios";
 import AddEvent from "./AddEvent.vue";
+import EditEvent from "./EditEvent.vue";
+
 export default {
   components: {
-    AddEvent
+    AddEvent,
+    EditEvent
   },
   data: () => ({
     today: "2019-05-28",
@@ -85,7 +86,6 @@ export default {
           }
         )
         .then(response => {
-          //console.log(response + "ASasSasAS");
           this.events = response.data;
         })
         .catch(error => console.error(error));

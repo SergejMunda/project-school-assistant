@@ -7,9 +7,21 @@
     "validateUpsert": true
   },
   "properties": {
-    "vnosi_v_urniku": {
-      "type": "object",
-      "required": true
+    "email": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+
+    "date": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
     }
   },
   "validations": [],
