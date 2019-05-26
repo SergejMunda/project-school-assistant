@@ -2,6 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Dashboard from './views/Dashboard.vue';
 import Login from './views/Login.vue';
+import Registration from './views/Registration.vue';
+import Events from './views/Events.vue';
+
 
 Vue.use(Router);
 
@@ -18,5 +21,16 @@ export default new Router({
             name: 'home',
             component: Dashboard,
         },
+        {
+            path: '/register',
+            name: 'register',
+            component: Registration,
+        },
+        {
+            path: '/events',
+            name: 'events',
+            component: Events,
+        },
+
     ],
 });

@@ -1,5 +1,5 @@
-<template>
-  <nav>
+<template >
+  <nav v-if="$route.path !=='/' && $route.path !=='/register' ">
     <v-snackbar v-model="snackbar" :timeout="4000" color="success">
       <span>Awesome! You added a new project.</span>
       <v-btn flat color="white" @click="snackbar = false">Close</v-btn>
@@ -8,13 +8,14 @@
     <v-toolbar flat app>
       <v-toolbar-side-icon class="grey--text" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="font-weight-light">Todo</span>
-        <span>App</span>
+        <span class="font-weight-light">Straight</span>
+        <span>As</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <!-- dropdown menu -->
+      
       <v-menu offset-y>
         <v-btn slot="activator" color="grey" flat>
           <v-icon left>expand_more</v-icon>
@@ -28,9 +29,13 @@
       </v-menu>
 
       <v-btn @click="signout" flat color="grey">
-        <span>Sign Out</span>
+        <span>Odjava</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
+      <v-flex xs12 md5>
+        <ChangePass/>
+      </v-flex>
+      
     </v-toolbar>
 
     <v-navigation-drawer v-model="drawer" app class="primary">
@@ -49,15 +54,19 @@
 </template>
 <script>
 import axios from "axios";
+import ChangePass from "../components/ChangePass.vue";
 export default {
+   components: {
+    ChangePass,
+  },
   data() {
     return {
+      notRegisterOrLogin : true,
       drawer: false,
-      token : localStorage.getItem('accToken'),
       links: [
         { icon: "dashboard", text: "Home", route: "/home" },
         { icon: "fast-food", text: "Food", route: "/projects" },
-        { icon: "event-search", text: "Events", route: "/team" },
+        { icon: "event-search", text: "Events", route: "/events" },
         { icon: "directions-bus", text: "Bus", route: "/projects" }
       ],
       snackbar: false
@@ -66,7 +75,7 @@ export default {
 
   methods: {
     signout(){
-      axios.post('http://localhost:3000/api/Users/logout?access_token='+this.token).then(response =>{
+      axios.post('http://localhost:3000/api/Users/logout?access_token='+localStorage.getItem('accToken')).then(response =>{
         console.log(response)
         localStorage.removeItem('accToken')
         this.$router.push('/')
@@ -76,7 +85,10 @@ export default {
       });
       
     }
+  
+  
   },
+ 
 };
 </script>
 <style>

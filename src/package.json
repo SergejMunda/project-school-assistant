@@ -1,42 +1,42 @@
 {
-  "name": "src",
-  "version": "1.0.0",
-  "main": "server/server.js",
-  "engines": {
-    "node": ">=6"
-  },
-  "scripts": {
-    "lint-server": "eslint .",
-    "start-backend": "node .",
-    "posttest": "npm run lint",
-    "nodemon-start": "nodemon",
-    "start": "nodemon"
-  },
-  "dependencies": {
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "helmet": "^3.10.0",
-    "loopback": "^3.22.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^6.2.0",
-    "loopback-connector-mongodb": "^1.18.1",
-    "nodemon": "^1.18.11",
-    "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-loopback": "^8.0.0",
-    "node-sass": "^4.9.0",
-    "parallelshell": "^3.0.1",
-    "sass-loader": "^7.1.0"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "client/*"
-    ],
-    "delay": "2500"
-  },
-  "description": "StraightAs"
+    "name": "src",
+    "version": "1.0.0",
+    "main": "server/server.js",
+    "engines": {
+        "node": ">=6"
+    },
+    "scripts": {
+        "lint-server": "eslint .",
+        "start-backend": "node .",
+        "posttest": "npm run lint",
+        "nodemon-start": "nodemon",
+        "start": "nodemon"
+    },
+    "dependencies": {
+        "compression": "^1.0.3",
+        "cors": "^2.5.2",
+        "helmet": "^3.10.0",
+        "loopback": "^3.22.0",
+        "loopback-boot": "^2.6.5",
+        "loopback-component-explorer": "^6.2.0",
+        "loopback-connector-mongodb": "^1.18.1",
+        "nodemon": "^1.18.11",
+        "serve-favicon": "^2.0.1",
+        "strong-error-handler": "^3.0.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.16.0",
+        "eslint-config-loopback": "^8.0.0",
+        "node-sass": "^4.9.0",
+        "parallelshell": "^3.0.1",
+        "sass-loader": "^7.1.0"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "client/*"
+        ],
+        "delay": "2500"
+    },
+    "description": "StraightAs"
 }
