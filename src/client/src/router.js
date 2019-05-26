@@ -4,6 +4,7 @@ import Dashboard from './views/Dashboard.vue';
 import Login from './views/Login.vue';
 import Registration from './views/Registration.vue';
 import Events from './views/Events.vue';
+import Buses from './views/Buses.vue';
 
 
 Vue.use(Router);
@@ -30,6 +31,11 @@ export default new Router({
             path: '/events',
             name: 'events',
             component: Events,
+        },
+        {
+            path: '/buses',
+            name: 'buses',
+            component: Buses,
         },
 
     ],

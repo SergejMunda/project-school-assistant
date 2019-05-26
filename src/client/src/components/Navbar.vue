@@ -67,7 +67,7 @@ export default {
         { icon: "dashboard", text: "Home", route: "/home" },
         { icon: "fast-food", text: "Food", route: "/projects" },
         { icon: "event-search", text: "Events", route: "/events" },
-        { icon: "directions-bus", text: "Bus", route: "/projects" }
+        { icon: "directions-bus", text: "Bus", route: "/buses" }
       ],
       snackbar: false
     };
