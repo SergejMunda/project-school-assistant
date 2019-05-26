@@ -13,8 +13,8 @@
               <v-icon small left>delete</v-icon>
               <span>Izbrisi</span>
             </v-btn>
-             <v-btn icon>
-                <v-icon>edit</v-icon>
+             <v-btn icon @click="editTodo(todo.id)">
+                <!--<EditTodo/>-->
              </v-btn>
           </v-card-actions>
         </v-card>
@@ -26,10 +26,12 @@
 <script>
 import axios from "axios";
 import TodoPopup from "./TodoPopup.vue";
+//import EditTodo from "./EditTodo.vue";
 
 export default {
   components: {
-    TodoPopup
+    TodoPopup,
+    //EditTodo
   },
   data() {
     return {
@@ -66,6 +68,17 @@ export default {
         })
         .then(_data => {
           this.getTodos();
+        })
+        .catch(error => console.error(error));
+    },
+    editTodo(id){
+      axios
+        .put(`http://localhost:3000/api/todos/${id}`, this.data,{
+          headers: { Authorization: this.token }
+        })
+         .then(response => {
+         // this.todos = response.data;
+          console.log(response)
         })
         .catch(error => console.error(error));
     }
