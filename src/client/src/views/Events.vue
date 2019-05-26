@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-flex xs2 sm4 md2>
+    <AddEvent @eventDodan="getEvents"/>
     </v-flex>
     <v-layout row wrap>
       <v-flex xs12 sm12 md8 lg6 v-for="event in events" :key="event.id">
@@ -25,9 +26,11 @@
 
 <script>
 import axios from "axios";
-
-
+import AddEvent from "../components/AddEvent.vue";
 export default {
+  components: {
+    AddEvent
+  },
   
   data() {
     return {
