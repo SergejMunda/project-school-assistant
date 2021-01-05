@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "browserslist": "^4.6.0",
     "caniuse-lite": "^1.0.30000971",
     "cheerio": "^1.0.0-rc.3",
